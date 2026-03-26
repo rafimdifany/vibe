@@ -1,8 +1,9 @@
 import { Elysia } from "elysia";
+import { userRoute } from "./routes/user-route";
 
 const app = new Elysia()
+  .use(userRoute)
   .get("/", () => "Hello Elysia")
-  .get("/ping", () => ({ message: "pong" }))
   .listen(3000);
 
 console.log(
